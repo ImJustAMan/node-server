@@ -1,0 +1,16 @@
+version: "3"
+services:
+  webapp:
+    container_name: node-server
+    build:
+      context: ./
+      dockerfile: dockerfile
+    image: server:v4
+    ports: 
+      - "8080:2345"
+    networks:
+      app:
+        aliases:
+          - weba
+networks:
+  app: #
